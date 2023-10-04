@@ -1,7 +1,7 @@
-C:\Users\Admin\Desktop\ExentriC-Imgui-Menu-DX9\imgui.cpp;C:\Users\Admin\Desktop\ExentriC-Imgui-Menu-DX9\examples\example_win32_directx9\Release\imgui.obj
-C:\Users\Admin\Desktop\ExentriC-Imgui-Menu-DX9\imgui_draw.cpp;C:\Users\Admin\Desktop\ExentriC-Imgui-Menu-DX9\examples\example_win32_directx9\Release\imgui_draw.obj
-C:\Users\Admin\Desktop\ExentriC-Imgui-Menu-DX9\imgui_tables.cpp;C:\Users\Admin\Desktop\ExentriC-Imgui-Menu-DX9\examples\example_win32_directx9\Release\imgui_tables.obj
-C:\Users\Admin\Desktop\ExentriC-Imgui-Menu-DX9\imgui_widgets.cpp;C:\Users\Admin\Desktop\ExentriC-Imgui-Menu-DX9\examples\example_win32_directx9\Release\imgui_widgets.obj
-C:\Users\Admin\Desktop\ExentriC-Imgui-Menu-DX9\backends\imgui_impl_dx9.cpp;C:\Users\Admin\Desktop\ExentriC-Imgui-Menu-DX9\examples\example_win32_directx9\Release\imgui_impl_dx9.obj
-C:\Users\Admin\Desktop\ExentriC-Imgui-Menu-DX9\backends\imgui_impl_win32.cpp;C:\Users\Admin\Desktop\ExentriC-Imgui-Menu-DX9\examples\example_win32_directx9\Release\imgui_impl_win32.obj
-C:\Users\Admin\Desktop\ExentriC-Imgui-Menu-DX9\examples\example_win32_directx9\main.cpp;C:\Users\Admin\Desktop\ExentriC-Imgui-Menu-DX9\examples\example_win32_directx9\Release\main.obj
+C:\Users\Admin\Documents\GitHub\ExentriC-Imgui-Menu-DX9\imgui.cpp;C:\Users\Admin\Documents\GitHub\ExentriC-Imgui-Menu-DX9\examples\example_win32_directx9\Release\imgui.obj
+C:\Users\Admin\Documents\GitHub\ExentriC-Imgui-Menu-DX9\imgui_draw.cpp;C:\Users\Admin\Documents\GitHub\ExentriC-Imgui-Menu-DX9\examples\example_win32_directx9\Release\imgui_draw.obj
+C:\Users\Admin\Documents\GitHub\ExentriC-Imgui-Menu-DX9\imgui_tables.cpp;C:\Users\Admin\Documents\GitHub\ExentriC-Imgui-Menu-DX9\examples\example_win32_directx9\Release\imgui_tables.obj
+C:\Users\Admin\Documents\GitHub\ExentriC-Imgui-Menu-DX9\imgui_widgets.cpp;C:\Users\Admin\Documents\GitHub\ExentriC-Imgui-Menu-DX9\examples\example_win32_directx9\Release\imgui_widgets.obj
+C:\Users\Admin\Documents\GitHub\ExentriC-Imgui-Menu-DX9\backends\imgui_impl_dx9.cpp;C:\Users\Admin\Documents\GitHub\ExentriC-Imgui-Menu-DX9\examples\example_win32_directx9\Release\imgui_impl_dx9.obj
+C:\Users\Admin\Documents\GitHub\ExentriC-Imgui-Menu-DX9\backends\imgui_impl_win32.cpp;C:\Users\Admin\Documents\GitHub\ExentriC-Imgui-Menu-DX9\examples\example_win32_directx9\Release\imgui_impl_win32.obj
+C:\Users\Admin\Documents\GitHub\ExentriC-Imgui-Menu-DX9\examples\example_win32_directx9\main.cpp;C:\Users\Admin\Documents\GitHub\ExentriC-Imgui-Menu-DX9\examples\example_win32_directx9\Release\main.obj

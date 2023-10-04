@@ -315,17 +315,20 @@ int main(int, char**)
                     {
                         if (active_tab == 0) {
 
-                            ImGui::BeginGroup();
-                            {
-                                ImGui::CustomBeginChild("GENERAL", ImVec2((region.x / 2) - spacing.x - (spacing.x / 2) - (170 / 2), (region.y - 48 - (spacing.y * 4)) / 3));
+                            if (subtabs == 0) {
+                                ImGui::BeginGroup();
                                 {
+                                    ImGui::CustomBeginChild("GENERAL", ImVec2((region.x / 2) - spacing.x - (spacing.x / 2) - (170 / 2), (region.y - 48 - (spacing.y * 4)) / 3));
+                                    {
 
-                                    ImGui::Keybindbox("Enabled Aimbot", &var::keybind_checkbox::keybind, &var::keybind_checkbox::key, &var::keybind_checkbox::m);
+                                        ImGui::Keybindbox("Enabled Aimbot", &var::keybind_checkbox::keybind, &var::keybind_checkbox::key, &var::keybind_checkbox::m);
 
-                                    ImGui::KeybindPickerbox("Silent Aim", &var::keybind_pickerbox::checkbox, &var::keybind_pickerbox::key, &var::keybind_pickerbox::m, var::keybind_pickerbox::color_picker, picker_flags);
+                                        ImGui::KeybindPickerbox("Silent Aim", &var::keybind_pickerbox::checkbox, &var::keybind_pickerbox::key, &var::keybind_pickerbox::m, var::keybind_pickerbox::color_picker, picker_flags);
+
+                                    }
+                                    ImGui::CustomEndChild();
 
                                 }
-                                ImGui::CustomEndChild();
 
                                 ImGui::CustomBeginChild("OTHER", ImVec2((region.x / 2) - spacing.x - (spacing.x / 2) - (170 / 2), (region.y - 48 - (spacing.y * 4)) / 3));
                                 {
@@ -346,51 +349,60 @@ int main(int, char**)
 
                                 }
                                 ImGui::CustomEndChild();
+
+
+                                ImGui::EndGroup();
                             }
-                            ImGui::EndGroup();
 
-                            ImGui::SameLine();
+                            if (subtabs == 1) {
 
-                            ImGui::BeginGroup();
-                            {
-                                ImGui::CustomBeginChild("AIMBOT", ImVec2((region.x / 2) - spacing.x - (spacing.x / 2) - (170 / 2), (region.y - 48 - (spacing.y * 3)) / 2));
+                                ImGui::SameLine();
+
+                                ImGui::BeginGroup();
                                 {
+                                    ImGui::CustomBeginChild("AIMBOT", ImVec2((region.x / 2) - spacing.x - (spacing.x / 2) - (170 / 2), (region.y - 48 - (spacing.y * 3)) / 2));
+                                    {
 
-                                    if (ImGui::Button("Succesfully", ImVec2((ImGui::GetContentRegionMax().x - style->WindowPadding.x - spacing.x / 2) / 2, 25))) ImGui::Notification({ ImGuiToastType_Success, 2000, "Successfully!" });
-                                    ImGui::SameLine();
-                                    if (ImGui::Button("Warning", ImVec2((ImGui::GetContentRegionMax().x - style->WindowPadding.x - spacing.x / 2) / 2, 25))) ImGui::Notification({ ImGuiToastType_Warning, 2000, "Warning!" });
+                                        if (ImGui::Button("Succesfully", ImVec2((ImGui::GetContentRegionMax().x - style->WindowPadding.x - spacing.x / 2) / 2, 25))) ImGui::Notification({ ImGuiToastType_Success, 2000, "Successfully!" });
+                                        ImGui::SameLine();
+                                        if (ImGui::Button("Warning", ImVec2((ImGui::GetContentRegionMax().x - style->WindowPadding.x - spacing.x / 2) / 2, 25))) ImGui::Notification({ ImGuiToastType_Warning, 2000, "Warning!" });
 
-                                    if (ImGui::Button("Error", ImVec2((ImGui::GetContentRegionMax().x - style->WindowPadding.x - spacing.x / 2) / 2, 25))) ImGui::Notification({ ImGuiToastType_Error, 2000, "Error!" });
-                                    ImGui::SameLine();
-                                    if (ImGui::Button("Info", ImVec2((ImGui::GetContentRegionMax().x - style->WindowPadding.x - spacing.x / 2) / 2, 25))) ImGui::Notification({ ImGuiToastType_Info, 2000, "Notification" });
+                                        if (ImGui::Button("Error", ImVec2((ImGui::GetContentRegionMax().x - style->WindowPadding.x - spacing.x / 2) / 2, 25))) ImGui::Notification({ ImGuiToastType_Error, 2000, "Error!" });
+                                        ImGui::SameLine();
+                                        if (ImGui::Button("Info", ImVec2((ImGui::GetContentRegionMax().x - style->WindowPadding.x - spacing.x / 2) / 2, 25))) ImGui::Notification({ ImGuiToastType_Info, 2000, "Notification" });
 
-                                    if (ImGui::Button("Config", ImVec2(ImGui::GetContentRegionMax().x - style->WindowPadding.x, 25))) ImGui::Notification({ ImGuiToastType_Config, 2000, "Config saved successfully!" });
+                                        if (ImGui::Button("Config", ImVec2(ImGui::GetContentRegionMax().x - style->WindowPadding.x, 25))) ImGui::Notification({ ImGuiToastType_Config, 2000, "Config saved successfully!" });
 
+                                    }
+                                    ImGui::CustomEndChild();
+
+                                    ImGui::CustomBeginChild("SETTINGS", ImVec2((region.x / 2) - spacing.x - (spacing.x / 2) - (170 / 2), (region.y - 48 - (spacing.y * 3)) / 2));
+                                    {
+
+                                        ImGui::Keybind("Keybind", &var::keybind::key, &var::keybind::m);
+
+                                        ImGui::Pickerbox("Accent Color", &var::picker_box::accent, var::picker_box::color, picker_flags);
+
+                                        ImGui::SliderInt("Slider Integer", &var::slider::slider_int, 1, 1000);
+
+                                        ImGui::SliderFloat("Slider Float", &var::slider::slider_float, -1.f, 10.f, "%.3f");
+
+                                    }
+                                    ImGui::CustomEndChild();
                                 }
-                                ImGui::CustomEndChild();
-
-                                ImGui::CustomBeginChild("SETTINGS", ImVec2((region.x / 2) - spacing.x - (spacing.x / 2) - (170 / 2), (region.y - 48 - (spacing.y * 3)) / 2));
-                                {
-
-                                    ImGui::Keybind("Keybind", &var::keybind::key, &var::keybind::m);
-
-                                    ImGui::Pickerbox("Accent Color", &var::picker_box::accent, var::picker_box::color, picker_flags);
-
-                                    ImGui::SliderInt("Slider Integer", &var::slider::slider_int, 1, 1000);
-
-                                    ImGui::SliderFloat("Slider Float", &var::slider::slider_float, -1.f, 10.f, "%.3f");
-
-                                }
-                                ImGui::CustomEndChild();
+                                ImGui::EndGroup();
                             }
-                            ImGui::EndGroup();
                         }
                         else if (active_tab == 1) {
 
                             ImGui::BeginGroup();
                             {
-                                ImGui::CustomBeginChild("SETTINGS", ImVec2((region.x / 2) - spacing.x - (spacing.x / 2) - (170 / 2), (region.y - 48 - (spacing.y * 2))));
+                                ImGui::CustomBeginChild("Save", ImVec2((region.x / 2) - spacing.x - (spacing.x / 2) - (170 / 2), (region.y - 48 - (spacing.y * 4)) / 3));
                                 {
+
+                                    if (ImGui::Button("Load", ImVec2((ImGui::GetContentRegionMax().x - style->WindowPadding.x - spacing.x / 2) / 2, 25))) ImGui::Notification({ ImGuiToastType_Success, 2000, "Successfully!" });
+                                    ImGui::SameLine();
+                                    if (ImGui::Button("Save", ImVec2((ImGui::GetContentRegionMax().x - style->WindowPadding.x - spacing.x / 2) / 2, 25)))  ImGui::Notification({ ImGuiToastType_Success, 2000, "Successfully!" });
 
                                 }
                                 ImGui::CustomEndChild();
@@ -401,13 +413,8 @@ int main(int, char**)
 
                             ImGui::BeginGroup();
                             {
-                                ImGui::CustomBeginChild("MISC", ImVec2((region.x / 2) - spacing.x - (spacing.x / 2) - (170 / 2), (region.y - 48 - (spacing.y * 3)) / 2));
-                                {
 
-                                }
-                                ImGui::CustomEndChild();
-
-                                ImGui::CustomBeginChild("JUST NAME", ImVec2((region.x / 2) - spacing.x - (spacing.x / 2) - (170 / 2), (region.y - 48 - (spacing.y * 3)) / 2));
+                                ImGui::CustomBeginChild("JUST NAME", ImVec2((region.x / 2) - spacing.x - (spacing.x / 2) - (170 / 2), (region.y - 48 - (spacing.y * 2))));
                                 {
 
                                 }
